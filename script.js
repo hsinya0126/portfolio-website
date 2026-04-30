@@ -2,18 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -50px 0px', // Trigger slightly before it's fully in view
-        threshold: 0.1
+        rootMargin: '0px 0px 100px 0px', // Trigger 100px before it enters the viewport
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry, index) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add a small staggered delay for better visual flow
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 100); 
-                
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
