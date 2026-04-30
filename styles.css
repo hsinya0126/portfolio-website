@@ -142,7 +142,7 @@ main {
 /* Portfolio Section */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 }
 
@@ -281,6 +281,9 @@ footer {
   .nav-links {
     display: none; /* Add a hamburger menu in script later if needed */
   }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Animations */
@@ -293,4 +296,93 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Case Study Styles */
+.case-study-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.case-study-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.case-study-header h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.case-study-meta {
+  color: var(--secondary-color);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-hero-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+}
+
+.case-study-body h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-body h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-body p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+}
+
+.case-study-body ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-body li {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+}
+
+.case-study-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.case-study-table th, .case-study-table td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
+}
+
+.case-study-table th {
+  background-color: var(--bg-subtle);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.table-responsive {
+  overflow-x: auto;
 }
