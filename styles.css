@@ -195,6 +195,7 @@ main {
 .about-text h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 3rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
