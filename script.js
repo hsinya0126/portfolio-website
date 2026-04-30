@@ -2,14 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px', // Trigger slightly before it's fully in view
         threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                // Add a small staggered delay for better visual flow
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); 
+                
                 observer.unobserve(entry.target);
             }
         });
@@ -21,6 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Mobile Navigation (can be expanded later if a hamburger menu is added)
-    console.log("Portfolio loaded successfully.");
+    console.log("Portfolio system initialized.");
 });
